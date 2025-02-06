@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import MarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
@@ -93,9 +94,10 @@ const View = ({ char }) => {
       <div className="char__descr">{description}</div>
       <div className="char__comics">Comics:</div>
       <ul className="char__comics-list">
-        {comics.lenght > 0 ? null : 'There is no comics'}
+        {comics.length > 0 ? null : 'There is no comics'}
         {comics.map((item, i) => {
           // eslint-disable-next-line
+
           if (i > 9) return;
           return (
             <li key={i} className="char__comics-item">
@@ -106,6 +108,10 @@ const View = ({ char }) => {
       </ul>
     </>
   );
+};
+
+CharInfo.propTypes = {
+  charId: PropTypes.number,
 };
 
 export default CharInfo;
