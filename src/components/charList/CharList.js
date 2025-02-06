@@ -95,7 +95,6 @@ class CharList extends Component {
     );
   }
 }
-
 CharList.propTypes = {
   onCharSelected: PropTypes.func,
 };
